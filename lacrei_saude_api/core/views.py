@@ -19,7 +19,7 @@ from django.http import Http404
 class ProfissionalList(APIView):
     ##lista todos os profissiopnais e cria novos profissioais
     
-    def get_pro(self, request):
+    def get(self, request):
         profissionais = Profissional.objects.all()
         serializer = ProfissionalSerializer(profissionais, many=True)
         return Response(serializer.data)
