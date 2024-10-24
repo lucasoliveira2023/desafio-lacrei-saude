@@ -13,3 +13,10 @@ class Profissional(models.Model):
         return self.nome_completo
     
     
+class Consulta(models.Model):
+    profissional = models.ForeignKey(Profissional, on_delete=models.CASCADE)
+    data = models.DateField()
+    
+    
+    def __str__(self):
+        return f"{self.profissional.nome_completo} - {self.data}"
