@@ -1,11 +1,9 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from core.views import ProfissionalViewSet, ConsultaViewSet
-
-router = DefaultRouter()
-router.register(r'profissionais', ProfissionalViewSet)
-router.register(r'consulta', ConsultaViewSet)
+#from core.views import ProfissionalViewSet, ConsultaViewSet
+from core.views import ProfissionalList, ProfissionalDetail
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path('profissionais/', ProfissionalList.as_view(), name='profissional-list'),
+    path('profissionais/<int:id>/', ProfissionalDetail.as_view(), name='profissional-detail'),
 ]
