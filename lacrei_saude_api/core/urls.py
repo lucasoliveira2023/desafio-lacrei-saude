@@ -7,6 +7,6 @@ urlpatterns = [
     path('profissionais/', ProfissionalList.as_view(), name='profissional-list'),
     path('profissionais/<int:id>/', ProfissionalDetail.as_view(), name='profissional-detail'),
     path('register/', UserRegisterView.as_view(), name='register'),
-    path('login/', UserLoginView.as_view(), nome='login'),
+    path('login/', UserLoginView.as_view(), name='login'),
     path('profile/', UserDetailView.as_view(), name='profile'), ##mantem a url para o detalhe do usuario
 ]
