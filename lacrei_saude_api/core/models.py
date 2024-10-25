@@ -1,6 +1,12 @@
 from django.db import models
-
+from django.contrib.auth.models import AbstractUser
 # Create your models here.
+class CustomUser(AbstractUser):
+    email = models.EmailField()
+    senha = models.CharField()
+
+
+
 class Profissional(models.Model):
     nome_completo = models.CharField(max_length=255)
     nome_social = models.CharField(max_length=255, blank=True, null= True)

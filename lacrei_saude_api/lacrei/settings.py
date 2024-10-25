@@ -72,6 +72,9 @@ TEMPLATES = [
 WSGI_APPLICATION = 'lacrei.wsgi.application'
 
 
+AUTH_USER_MODEL = 'core.CustomUser'
+
+
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
