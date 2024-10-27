@@ -2,8 +2,9 @@ from django.shortcuts import render
 from rest_framework import status, generics
 from rest_framework.response import Response
 from django.contrib.auth import authenticate
+from django.contrib.auth.models import User
 from rest_framework.views import APIView
-from core.models import Profissional, Consulta
+from core.models import Profissional, Consulta, CustomUser
 from core.serializers import (
     ProfissionalSerializer,
     UserSerializer,
@@ -45,7 +46,7 @@ class UserLoginView(APIView):
         
         return Response({"error": "Invalid credentials"}, status=status.HTTP_400_BAD_REQUEST)
 
-
+       
 # View para detalhes do usuário autenticado
 class UserDetailView(APIView):
     permission_classes = [IsAuthenticated]
